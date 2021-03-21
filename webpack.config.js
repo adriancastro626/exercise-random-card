@@ -36,7 +36,7 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader']
       },
       {
@@ -63,7 +63,7 @@ module.exports = {
       username: process.env.BC_STUDENT_EMAIL,
       token: process.env.BC_ASSETS_TOKEN,
       compiler: "webpack",
-      language: "html,css,javascript",
+      language: "html,scss,javascript",
       framework: "vanillajs"
     }),
     new FriendlyErrorsWebpackPlugin({
