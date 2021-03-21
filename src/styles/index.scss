@@ -1,13 +1,47 @@
-@import "~bootstrap/scss/bootstrap.scss";
-
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+body {
+  background-color: green;
+  box-sizing: border-box;
+}
+.bodyCard {
+  text-align: center; 
+  background: white;
+  margin: auto;
+  height: 200px;
+  width: 250px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 80px;
+  padding-top: 180px;
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 80px;
+  }
+  &::after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+  }
+  &.spade:before,
+  &.spade:after {
+    content: "\2660";
+  }
+  &.club:before,
+  &.club:after {
+    content: "\2663";
+  }
+  &.heart:before,
+  &.heart:after {
+    content: "\2665";
+    color: red;
+  }
+  &.diamond:before,
+  &.diamond:after {
+    content: "\2666";
+    color: red;
+  }
+}

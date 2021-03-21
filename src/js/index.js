@@ -1,15 +1,32 @@
-//import react into the bundle
-import React from "react";
-import ReactDOM from "react-dom";
-
-//include bootstrap npm library into the bundle
-import "bootstrap";
-
-//include your index.scss file into the bundle
 import "../styles/index.scss";
 
-//import your own components
-import { Home } from "./component/home.js";
+window.onload = () => {
+	document.querySelector(".bodyCard").classList.add(randomSuit());
+	document.querySelector(".bodyCard").innerHTML = randomNumber();
+};
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let randomNumber = () => {
+	let numbers = [
+		"A",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"9",
+		"10",
+		"J",
+		"Q",
+		"K"
+	];
+	let indexNumb = Math.floor(Math.random() * numbers.length);
+	return numbers[indexNumb];
+};
+
+let randomSuit = () => {
+	let suit = ["spade", "club", "diamond", "heart"];
+	let indexSuit = Math.floor(Math.random() * suit.length);
+	return suit[indexSuit];
+};
