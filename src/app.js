@@ -1,6 +1,6 @@
 /* eslint-disable */
 import "bootstrap";
-import "./style.css";
+import "./style.scss";
 
 window.onload = () => {
   //write your code here
