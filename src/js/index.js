@@ -1,10 +1,7 @@
 import "../styles/index.scss";
 
-window.onload = () => {
-	document.querySelector(".bodyCard").classList.add(randomSuit());
-	document.querySelector(".bodyCard").innerHTML = randomNumber();
-};
-let randomNumber = () => {
+// NUEVA RANDOM CARD
+let randomCard = () => {
 	let numbers = [
 		"A",
 		"2",
@@ -21,10 +18,26 @@ let randomNumber = () => {
 		"K"
 	];
 	let indexNumb = Math.floor(Math.random() * numbers.length);
-	return numbers[indexNumb];
-};
-let randomSuit = () => {
+	let indNumb = numbers[indexNumb];
+	document.querySelector(".bodyCard").innerHTML = indNumb;
+
 	let suit = ["spade", "club", "diamond", "heart"];
 	let indexSuit = Math.floor(Math.random() * suit.length);
-	return suit[indexSuit];
+	let indSuit = suit[indexSuit];
+	document.querySelector(".bodyCard").className = `bodyCard ${indSuit}`;
 };
+
+//BOTON PARA NUEVA CARTA
+window.addEventListener("load", randomCard);
+
+let btn = document.createElement("BUTTON");
+btn.innerHTML = "New Card Here!!";
+document.body.appendChild(btn);
+btn.addEventListener("click", randomCard);
+
+//INTERVALO DE 10s PARA NUEVA CARTA
+window.setInterval(randomCard, 10000);
+
+let countdown = document.createElement("div");
+countdown.id = "countdown";
+document.body.appendChild(countdown);

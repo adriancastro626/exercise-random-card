@@ -2,6 +2,10 @@ body {
   background-color: green;
   box-sizing: border-box;
 }
+
+.BUTTON {
+    text-align: center;
+}
 .bodyCard {
   text-align: center; 
   background: white;
@@ -25,6 +29,7 @@ body {
     bottom: 20px;
     right: 20px;
     font-size: 80px;
+    transform: rotate(-180deg);
   }
   &.spade:before,
   &.spade:after {
